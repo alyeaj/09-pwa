@@ -15,36 +15,37 @@ var recs = "Recommended Games";
 var texts = "Strange Happenings: An Ordinary Game"
 var screen; 
 var next;
-var pres; 
+var press; 
 var dpres;
 var accept; 
-var reject;
+var reject; 
+var restart;
 
 
 //Animations
 function preload(){
    
   //hab = loadFont('fontinfo.txt');
-  strange = loadImage('2Strange.jpeg');
+  //strange = loadImage('2Strange.PNG');
   typ = loadImage('Typing.PNG'); 
-  work = loadImage('Work.png');  
-  disturb = loadImage('Disturbed.png');
+  work = loadImage('Work.PNG');  
+  disturb = loadImage('Disturbed.PNG');
  // placeholder = loadImage('Disturbed.PNG'); 
-  placeholder = createVideo('StartScreen.MOV') 
-  inspect = createVideo('Inspect.MOV') 
-  rom = createVideo('Upside.MOV') 
-  start = createVideo('Starting.MOV') 
-  press = createVideo('Press.MOV') 
-  dragon = createVideo('DrGood.MOV') 
-  ded = createVideo('DragonDeath.MOV'); 
-  cr = createVideo('Cryptic.MOV'); 
-  coward = createVideo('Coward.MOV'); 
-  bacc = createVideo('GoBack.MOV');
-   door = createVideo('Left.MOV'); 
-  date = createVideo('Right.MOV'); 
-  party = createVideo('Party.MOV'); 
-  partners = createVideo('Partners.MOV'); 
-  re = loadImage('RecGames.png');
+  placeholder = createVideo("Starting.MP4");
+  inspect = createVideo('Inspect.MP4');
+  rom = createVideo('Room.mov'); 
+  start = createVideo('Starting.MP4'); 
+  pres = createVideo('Press.mov'); 
+  dragon = createVideo('DragonGood.MP4'); 
+  ded = createVideo('DragonDeath.MP4'); 
+  cr = createVideo('Cryptic.MP4'); 
+  coward = createVideo('Coward.MP4'); 
+  bacc = createVideo('GoBack.MP4');
+   door = createVideo('Left.mov'); 
+  date = createVideo('Right.mov'); 
+  party = createVideo('Party.MP4'); 
+  partners = createVideo('Partners.MP4'); 
+  
   
   main = loadSound('MainSound.mp3'); 
   typi = loadSound('Background-music.mp3');
@@ -61,7 +62,7 @@ function setup() {
   placeholder.hide(); 
   inspect.hide(); 
   rom.hide(); 
-  press.hide();
+  pres.hide();
   dragon.hide(); 
   cr.hide(); 
   ded.hide(); 
@@ -70,30 +71,21 @@ function setup() {
   date.hide(); 
   party.hide(); 
   partners.hide(); 
-  bacc.hide();
+  bacc.hide(); 
   
    screen =createButton("Start") 
   screen.position(250,100);
    screen.mousePressed(begin); 
    start.size(500,550);
    start.position(50,50); 
+   
   //next = createButton("Next") 
   
-  // ///strangeNoise
-  // button1 = createButton("Inspect Noise") 
-  // button1.position(75,100)
-  // button2 = createButton("Don't Inspect") 
-  //  button2.position(400,100) 
-  // button2.mousePressed(still) 
-  // button1.mousePressed(walk) 
-  
-  // inspect.size(400,500)
-  // inspect.position(100,50)
   
   
   function begin(){
     placeholder = start.play() 
-    screen.hide();
+    screen.hide(); 
     next = createButton("Next") 
     next.position(250,100)
   //  next = start.stop(); 
@@ -152,7 +144,7 @@ console.log("walk to noise")
 } 
 
 function cou(){
-  placeholder = bacc.play(); 
+  placeholder = coward.play(); 
   texts = "Things are getting pretty strange..." 
   button1.hide(); 
   button2.hide();
@@ -164,9 +156,9 @@ function room(){
   rom.hide(); 
   button1.hide(); 
   button2.hide();
-  pres = createButton("Press Button")
-  pres.position(100,100) 
-  pres.mousePressed(pressed)
+  press = createButton("Press Button")
+  press.position(100,100) 
+  press.mousePressed(pressed)
   dpres = createButton("Don't Press") 
  dpres.position(400,100) 
   dpres.mousePressed(dontPress)
@@ -175,9 +167,9 @@ function room(){
 function pressed(){
   console.log("The floor crumbles and you start to fall and fall into a secret room") 
   texts= "You fall!"
-  placeholder = press.play(); 
-  press.hide(); 
+  placeholder = pres.play()
   pres.hide(); 
+  press.hide(); 
   dpres.hide();
   lef = createButton("Left"); 
   lef.position(100,100); 
@@ -205,8 +197,8 @@ function pressed(){
 function dontPress(){
   console.log("You got another Cryptic ending") 
   texts = "Again???" 
-  placeholder = coward.play(); 
-  pres.hide(); 
+  placeholder = bacc.play(); 
+  press.hide(); 
   dpres.hide();
 }
 
@@ -270,7 +262,7 @@ function draw() {
   
   //
   image(placeholder, 50, 130, 500, 470);
-  image(strange, 650, 100, 500, 500);
+  //image(strange, 650, 100, 500, 500);
 //  image(re, 700, 460, 250, 220);
   //text(recs, 700, 450);
 }
