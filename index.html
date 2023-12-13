@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+    <title>Strange Happenings</title>
+    <!-- Various metadata for our app -->
+    <meta name="description" content="Code for Strange Happenings PWA"/>
+    <link rel="icon" type="image/x-icon" href="./strange_icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./strange_icons/apple-touch-icon.png"> 
+    <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="./manifest.json">
+    <base href="./">
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -10,6 +21,27 @@
   <body>
     <main>
     </main>
-    <script src="sketch.js"></script>
+    <script 
+    
+    // register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('./sw.js')
+        .then(function (reg) {
+          if (reg.installing) {
+            console.log('Service worker installing');
+          } else if (reg.waiting) {
+            console.log('Service worker installed');
+          } else if (reg.active) {
+            console.log('Service worker active');
+          }
+        })
+        .catch(function (error) {
+          // registration failed
+          console.log('Registration failed with ' + error);
+        });
+    }
+
+    src="sketch.js"></script>
   </body>
 </html>

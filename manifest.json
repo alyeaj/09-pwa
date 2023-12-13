@@ -1,0 +1,24 @@
+{
+    "lang": "en",
+    "dir": "ltr",
+    "name": "Strange Happenings",
+    "short_name": "strange",
+    "description": "A short choose-your-own adventure game about strange things that happen to you.",
+    "start_url": "./",
+    "background_color": "rgb(203,203,203)",
+    "theme-color": "#868396",
+    "display": "fullscreen",
+    "icons": [
+        {
+            "src": "./strange_icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "./strange_icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "id": "strange"
+}
