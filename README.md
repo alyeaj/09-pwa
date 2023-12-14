@@ -10,6 +10,9 @@ Description: A short choose your own adventure game where strange things happen 
 This link doesn't work: 
 http://143.244.215.52:3000/ 
 
+This link works on my laptop but not on my phone: 
+http://127.0.0.1:5500/
+
 But I can install it on my laptop but only on local host for now: 
 ![](./desktop-icon.png) 
 
